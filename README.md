@@ -9,5 +9,9 @@ docker build -t 'site' .
 docker run -ti -v /.../static-site-base/site:/home/jekyll/site --rm site bash
 
 # inside container
+# Initialise (frist time)
 jekyll new site
+# Serve (always)
+cd site
+jekyll serve
 ```
