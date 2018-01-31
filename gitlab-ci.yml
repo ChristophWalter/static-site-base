@@ -1,0 +1,16 @@
+stages:
+  - build
+  - test
+  - deploy
+
+build-site:
+  stage: build
+  image: jekyll/jekyll
+  services:
+    - docker:dind
+  script:
+    - cd site
+    - jekyll build
+  artifacts:
+    paths:
+     - _site
